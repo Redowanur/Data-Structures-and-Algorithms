@@ -30,6 +30,7 @@ int Front(){
 }
 
 void display(){
+    if(isEmpty()) return;
     if(front <= rear){
         for(int i = front; i <= rear; i++) cout << arr[i] << " ";
     }
@@ -51,12 +52,16 @@ void display(){
 int main(){
     
     for(int i = 1; i <= 15; i++) push(i);
-
     display();
 
-    pop(); pop(); display();
-    push(15); push(16); display();
-    push(20); display();
+    for(int i = 0; i < 5; i++) pop();
+    display();
+
+    for(int i = 20; i < 30; i++) push(i);
+    display();
+
+    for(int i = 0; i < 6; i++) pop();
+    display();
 
     return 0;
 }
