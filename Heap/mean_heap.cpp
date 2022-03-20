@@ -6,7 +6,7 @@ void print(int *arr, int sz){
     cout << endl;
 }
 
-void max_heap(int *arr, int sz){
+void mean_heap(int *arr, int sz){
     for(int i = 2; i <= sz; i++){
         int j = i;
         int parent = j/2;
@@ -33,7 +33,7 @@ int main(){
 
     int size = sizeof(arr)/sizeof(arr[1]);
 
-    max_heap(arr, size);
+    mean_heap(arr, size);
 
     print(arr, size);
     
