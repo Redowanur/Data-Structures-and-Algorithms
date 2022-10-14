@@ -20,31 +20,19 @@ using namespace std;
 
 int c = 0;
 
-void BFS(int s, vector<bool>& vis, map <int, vector<int>> adj){
-    queue <int> q;
-    q.push(s);
-    cout << "Case " << ++c << ": " << s << ' ';
-    vis[s] = true;
+void DFS(int u, vector <bool>& vis, map <int, vector<int>> adj){
+    vis[u] = true;
+    cout << u << ' ';
 
-    while(!q.empty()){
-        int u = q.front();
-        q.pop();
-
-        for(auto v: adj[u]){
-            if(!vis[v]){
-                q.push(v);
-                cout << v << ' ';
-                vis[v] = true;
-            }
-        }
+    for(auto v: adj[u]){
+        if(!vis[v]) DFS(v, vis, adj);
     }
-    cout << endl;
 }
 
 int main(){
     int t;
     cin >> t;
-    
+
     while(t--){
         int nodes, edges, src;
         map <int, vector<int>> adj;
@@ -57,8 +45,9 @@ int main(){
             adj[x].push_back(y);
             adj[y].push_back(x);
         }
-        BFS(src, vis, adj);
+        cout << "Case " << ++c << ": ";
+        DFS(src, vis, adj);
+        cout << endl;
     }
-
     return 0;
 }
