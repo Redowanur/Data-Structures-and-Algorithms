@@ -18,12 +18,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int c = 0;
+int cas = 0;
 
 void BFS(int s, vector<bool>& vis, map <int, vector<int>> adj){
     queue <int> q;
     q.push(s);
-    cout << "Case " << ++c << ": " << s << ' ';
+    cout << "Case " << ++cas << ": " << s << ' ';
     vis[s] = true;
 
     while(!q.empty()){

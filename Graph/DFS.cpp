@@ -18,7 +18,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int c = 0;
+int cas = 0;
 
 void DFS(int u, vector <bool>& vis, map <int, vector<int>> adj){
     vis[u] = true;
@@ -45,7 +45,7 @@ int main(){
             adj[x].push_back(y);
             adj[y].push_back(x);
         }
-        cout << "Case " << ++c << ": ";
+        cout << "Case " << ++cas << ": ";
         DFS(src, vis, adj);
         cout << endl;
     }
